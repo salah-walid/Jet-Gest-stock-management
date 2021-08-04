@@ -1,0 +1,7 @@
+{
+    "name": "gestion-app",
+    "integrations": {
+      "capacitor": {}
+    },
+    "type": "react"
+  }

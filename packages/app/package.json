@@ -1,0 +1,101 @@
+{
+  "name": "gestion-app",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "main": "build/electron/main.js",
+  "build": {
+    "productName": "Jet-Gest",
+    "appId": "com.jetlight.jetgest",
+    "extends": null,
+    "files": [
+      "build/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "extraResources": [
+      {
+        "from": "assets/images",
+        "to": "assets/images"
+      }
+    ]
+  },
+  "dependencies": {
+    "@capacitor/android": "^2.4.7",
+    "@capacitor/core": "^2.4.7",
+    "@craco/craco": "^6.1.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.7.1",
+    "@types/bootstrap": "^5.0.9",
+    "@types/electron-devtools-installer": "^2.2.0",
+    "@types/history": "^4.7.8",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^12.20.4",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "@types/react-router-bootstrap": "^0.24.5",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/react-tabs": "^2.3.2",
+    "auto-bind": "^4.0.0",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.0-beta2",
+    "electron-devtools-installer": "^3.1.1",
+    "electron-is-dev": "^2.0.0",
+    "electron-reload": "^1.5.0",
+    "env-cmd": "^10.1.0",
+    "form-data": "^4.0.0",
+    "is-electron": "^2.2.0",
+    "mobx": "^6.1.7",
+    "mobx-react": "^7.1.0",
+    "mobx-react-router": "^4.1.0",
+    "node-sass": "^5.0.0",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.5.2",
+    "react-dom": "^17.0.1",
+    "react-router-bootstrap": "^0.25.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.2",
+    "typescript": "^4.1.5",
+    "web-vitals": "^1.1.0"
+  },
+  "scripts": {
+    "start": "env-cmd -f .env.web craco start",
+    "build": "env-cmd -f .env.web craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "postinstall": "env-cmd -f .env.electron electron-builder install-app-deps",
+    "electron:dev": "env-cmd -f .env.electron concurrently \"set BROWSER=none&&craco start\" \"wait-on http://localhost:3000 && tsc -p electron && electron .\"",
+    "electron:build": "env-cmd -f .env.electron craco build && tsc -p electron && electron-builder"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@capacitor/cli": "2.4.7",
+    "concurrently": "^6.0.0",
+    "electron": "^12.0.2",
+    "electron-builder": "^22.10.5",
+    "wait-on": "^5.3.0"
+  }
+}

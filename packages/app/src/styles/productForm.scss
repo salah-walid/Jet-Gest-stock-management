@@ -1,0 +1,24 @@
+.input-img{
+    height: 250px;
+    width: 250px;
+}
+
+.button_class {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.productForm{
+    td, th{
+        height: 50px;
+        vertical-align: top;
+    }
+    th{
+        width: 200px !important;
+    }
+}
+
+.form-check-input:checked{
+    background-color: $primary !important;
+}

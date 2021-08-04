@@ -1,0 +1,8 @@
+{
+    "appId": "com.jetlight.jetgest",
+    "appName": "gestion-app",
+    "bundledWebRuntime": false,
+    "npmClient": "npm",
+    "webDir": "build",
+    "cordova": {}
+  }

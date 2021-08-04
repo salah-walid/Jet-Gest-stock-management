@@ -1,0 +1,26 @@
+version : "3.8"
+
+services:
+  localserver:
+    build: .
+    container_name: localserver
+    command: ./server/entrypoint.sh
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+  
+  db:
+    image: postgres
+    container_name: db
+    environment:
+      - POSTGRES_DB=JETGESTDB
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=DBserver
+
+  redis:
+    image: "redis:alpine"
+    container_name: redis

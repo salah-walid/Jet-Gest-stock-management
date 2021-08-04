@@ -1,0 +1,19 @@
+{
+  "name": "jetgest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jetgest Business Management app",
+  "workspaces": [
+    "packages/app"
+  ],
+  "scripts": {
+    "dev": "concurrently \"docker compose up\" \"wait-on http://localhost:8000/admin && lerna run start --scope=gestion-app\"",
+    "dev:electron": "concurrently \"docker compose up\" \"wait-on http://localhost:8000/admin && lerna run electron:dev --scope=gestion-app\""
+  },
+  "author": "Walid Salah",
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "lerna": "^4.0.0",
+    "wait-on": "^6.0.0"
+  }
+}
